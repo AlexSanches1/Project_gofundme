@@ -3,18 +3,18 @@ package hebron.app.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+@Table(name = "\"project\"")
 public class Project {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -33,4 +33,11 @@ public class Project {
     private String header;
 
     private String footer;
+
+    @ManyToMany
+    @JoinTable(name = "project_user",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "teamMember_id")
+    )
+    private List<TeamMember> teamMembers;
 }

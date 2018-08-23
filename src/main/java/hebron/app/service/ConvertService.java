@@ -30,6 +30,7 @@ public class ConvertService {
         dto.setGoal(project.getGoal());
         dto.setHeader(project.getHeader());
         dto.setFooter(project.getFooter());
+        dto.setTeamMembers(project.getTeamMembers());
         return dto;
     }
 }
