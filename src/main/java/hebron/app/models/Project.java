@@ -30,9 +30,9 @@ public class Project {
 
     private Double goal;
 
-    private String header;
-
-    private String footer;
+    @OneToMany
+    @JoinColumn(name = "history_id")
+    private List<History> histories;
 
     @ManyToMany
     @JoinTable(name = "project_user",

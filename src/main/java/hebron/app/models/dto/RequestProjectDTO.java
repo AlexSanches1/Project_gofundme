@@ -1,8 +1,10 @@
 package hebron.app.models.dto;
 
+import hebron.app.models.History;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class RequestProjectDTO {
@@ -15,7 +17,5 @@ public class RequestProjectDTO {
 
     private Double goal;
 
-    private String header;
-
-    private String footer;
+    private List<History> histories;
 }

@@ -38,8 +38,7 @@ public class ProjectService {
         pastProject.setStartDate(requestProjectDTO.getStartDate());
         pastProject.setEndDate(requestProjectDTO.getEndDate());
         pastProject.setGoal(requestProjectDTO.getGoal());
-        pastProject.setHeader(requestProjectDTO.getHeader());
-        pastProject.setFooter(requestProjectDTO.getFooter());
+        pastProject.setHistories(requestProjectDTO.getHistories());
         Project updateProject = projectRepository.save(pastProject);
 
         projectRepository.deleteById(project.getId());

@@ -1,5 +1,6 @@
 package hebron.app.models.dto;
 
+import hebron.app.models.History;
 import hebron.app.models.TeamMember;
 import lombok.Data;
 
@@ -23,9 +24,7 @@ public class ProjectDTO {
 
     private Double goal;
 
-    private String header;
-
-    private String footer;
+    private List<History> histories;
 
     private List<TeamMember> teamMembers;
 }

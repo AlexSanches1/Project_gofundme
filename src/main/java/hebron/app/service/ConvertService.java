@@ -14,8 +14,7 @@ public class ConvertService {
         project.setStartDate(requestProjectDTO.getStartDate());
         project.setEndDate(requestProjectDTO.getEndDate());
         project.setGoal(requestProjectDTO.getGoal());
-        project.setFooter(requestProjectDTO.getFooter());
-        project.setHeader(requestProjectDTO.getHeader());
+        project.setHistories(requestProjectDTO.getHistories());
         return project;
     }
 
@@ -28,8 +27,7 @@ public class ConvertService {
         dto.setParticipantsCount(project.getParticipantsCount());
         dto.setCurrentSum(project.getCurrentSum());
         dto.setGoal(project.getGoal());
-        dto.setHeader(project.getHeader());
-        dto.setFooter(project.getFooter());
+        dto.setHistories(project.getHistories());
         dto.setTeamMembers(project.getTeamMembers());
         return dto;
     }
