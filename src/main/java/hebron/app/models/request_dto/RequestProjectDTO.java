@@ -1,4 +1,4 @@
-package hebron.app.models.dto;
+package hebron.app.models.request_dto;
 
 import hebron.app.models.History;
 import lombok.Data;

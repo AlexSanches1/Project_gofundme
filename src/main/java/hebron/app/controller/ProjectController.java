@@ -1,7 +1,7 @@
 package hebron.app.controller;
 
 import hebron.app.models.Project;
-import hebron.app.models.dto.RequestProjectDTO;
+import hebron.app.models.request_dto.RequestProjectDTO;
 import hebron.app.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

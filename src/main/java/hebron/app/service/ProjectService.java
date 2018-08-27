@@ -2,7 +2,7 @@ package hebron.app.service;
 
 import hebron.app.models.Project;
 import hebron.app.models.dto.ProjectDTO;
-import hebron.app.models.dto.RequestProjectDTO;
+import hebron.app.models.request_dto.RequestProjectDTO;
 import hebron.app.repositry.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
