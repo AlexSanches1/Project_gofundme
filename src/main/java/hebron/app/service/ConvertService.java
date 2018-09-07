@@ -16,25 +16,28 @@ public class ConvertService {
     public Project convertToProject(RequestProjectDTO requestProjectDTO) {
         Project project = new Project();
         project.setTitle(requestProjectDTO.getTitle());
+        project.setShortDescription(requestProjectDTO.getShortDescription());
         project.setStartDate(requestProjectDTO.getStartDate());
         project.setEndDate(requestProjectDTO.getEndDate());
         project.setGoal(requestProjectDTO.getGoal());
-        project.setHistories(requestProjectDTO.getHistories());
         return project;
     }
 
     public ProjectDTO convertProjectToDTO(Project project) {
         ProjectDTO dto = new ProjectDTO();
         dto.setId(project.getId());
+        dto.setPathToMainImage(project.getPathToMainImage());
+        dto.setPathToVideo(project.getPathToVideo());
+        dto.setShortDescription(project.getShortDescription());
         dto.setTitle(project.getTitle());
         dto.setStartDate(project.getStartDate());
         dto.setEndDate(project.getEndDate());
         dto.setParticipantsCount(project.getParticipantsCount());
         dto.setCurrentSum(project.getCurrentSum());
         dto.setGoal(project.getGoal());
-        dto.setHistories(project.getHistories());
-        dto.setTeamMembers(project.getTeamMembers());
-        return dto;
+        if (project.getHistory() != null) dto.setHistory(convertHistoryToDTO(project.getHistory()));
+        dto.setCurrentSum(0.0);
+        dto.setParticipantsCount(0);return dto;
     }
 
     public String convertFileToMD5(byte[] bytes) {
@@ -44,24 +47,16 @@ public class ConvertService {
         } catch (NoSuchAlgorithmException e) {
             return null;
         }
-        StringBuffer newString = new StringBuffer();
-        for (int i = 0; i < generatedBytes.length; i++) {
-            newString.append(Integer.toHexString(0xFF & generatedBytes[i]));
+        StringBuilder newString = new StringBuilder();
+        for (byte generatedByte : generatedBytes) {
+            newString.append(Integer.toHexString(0xFF & generatedByte));
         }
         return newString.toString();
-    }
-
-    public History convertToHistory(String fileName, String text) {
-        History history = new History();
-        history.setNumberImage(fileName);
-        history.setText(text);
-        return history;
     }
 
     public HistoryDTO convertHistoryToDTO(History history) {
         HistoryDTO dto = new HistoryDTO();
         dto.setId(history.getId());
-        dto.setNumberImage(history.getNumberImage());
         dto.setText(history.getText());
         return dto;
     }

@@ -1,16 +1,17 @@
 package hebron.app.models.dto;
 
-import hebron.app.models.History;
-import hebron.app.models.TeamMember;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
 public class ProjectDTO {
 
     private Long id;
+
+    private String pathToVideo;
+
+    private String pathToMainImage;
 
     private String title;
 
@@ -24,7 +25,7 @@ public class ProjectDTO {
 
     private Double goal;
 
-    private List<History> histories;
+    private String shortDescription;
 
-    private List<TeamMember> teamMembers;
+    private HistoryDTO history;
 }

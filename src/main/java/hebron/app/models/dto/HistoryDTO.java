@@ -8,6 +8,4 @@ public class HistoryDTO {
     private Long id;
 
     private String text;
-
-    private String numberImage;
 }

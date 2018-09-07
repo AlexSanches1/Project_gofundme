@@ -13,16 +13,19 @@ import java.util.stream.Collectors;
 @Service
 public class ProjectService {
 
-    @Autowired
     private ProjectRepository projectRepository;
 
-    @Autowired
     private ConvertService convertService;
 
-    public ProjectDTO createProject(RequestProjectDTO requestProjectDTO) {
+    @Autowired
+    public ProjectService(ProjectRepository projectRepository, ConvertService convertService) {
+        this.projectRepository = projectRepository;
+        this.convertService = convertService;
+    }
+
+    public void createProject(RequestProjectDTO requestProjectDTO) {
         Project project = convertService.convertToProject(requestProjectDTO);
-        Project saveProject = projectRepository.save(project);
-        return convertService.convertProjectToDTO(saveProject);
+        projectRepository.save(project);
     }
 
     public List<ProjectDTO> listProject() {
@@ -32,21 +35,12 @@ public class ProjectService {
                 .collect(Collectors.toList());
     }
 
-    public ProjectDTO editProject(Project project, RequestProjectDTO requestProjectDTO) {
-        Project pastProject = projectRepository.getOne(project.getId());
-        pastProject.setTitle(requestProjectDTO.getTitle());
-        pastProject.setStartDate(requestProjectDTO.getStartDate());
-        pastProject.setEndDate(requestProjectDTO.getEndDate());
-        pastProject.setGoal(requestProjectDTO.getGoal());
-        pastProject.setHistories(requestProjectDTO.getHistories());
-        Project updateProject = projectRepository.save(pastProject);
-
-        projectRepository.deleteById(project.getId());
-
-        return convertService.convertProjectToDTO(updateProject);
+    public void delete(Long id) {
+        projectRepository.deleteById(id);
     }
 
-    public void delete(Project project) {
-        projectRepository.delete(project);
+    public ProjectDTO getProjectById(Long id) {
+        Project project = projectRepository.getOne(id);
+        return convertService.convertProjectToDTO(project);
     }
 }

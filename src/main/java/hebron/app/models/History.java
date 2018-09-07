@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "\"history\"")
 public class History {
 
     @Id
@@ -16,6 +15,4 @@ public class History {
     private Long id;
 
     private String text;
-
-    private String numberImage;
 }

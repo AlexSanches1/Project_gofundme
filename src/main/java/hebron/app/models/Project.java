@@ -4,19 +4,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "\"project\"")
 public class Project {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    private String pathToVideo;
+
+    private String pathToMainImage;
 
     private String title;
 
@@ -28,16 +30,13 @@ public class Project {
 
     private Double currentSum;
 
+    @NotNull
     private Double goal;
 
-    @OneToMany
-    @JoinColumn(name = "history_id")
-    private List<History> histories;
+    private String shortDescription;
 
-    @ManyToMany
-    @JoinTable(name = "project_user",
-            joinColumns = @JoinColumn(name = "project_id"),
-            inverseJoinColumns = @JoinColumn(name = "teamMember_id")
-    )
-    private List<TeamMember> teamMembers;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "history_id")
+    private History history;
+
 }
