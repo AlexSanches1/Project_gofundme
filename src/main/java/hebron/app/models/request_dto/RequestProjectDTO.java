@@ -1,4 +1,4 @@
-package hebron.app.models.dto;
+package hebron.app.models.request_dto;
 
 import lombok.Data;
 
@@ -9,13 +9,11 @@ public class RequestProjectDTO {
 
     private String title;
 
+    private String shortDescription;
+
     private Date startDate;
 
     private Date endDate;
 
     private Double goal;
-
-    private String header;
-
-    private String footer;
 }

@@ -5,16 +5,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
-public class Admin {
+public class History {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Byte id;
+    private Long id;
 
-    private String login;
-
-    private String password;
+    private String text;
 }

@@ -9,6 +9,10 @@ public class ProjectDTO {
 
     private Long id;
 
+    private String pathToVideo;
+
+    private String pathToMainImage;
+
     private String title;
 
     private Date startDate;
@@ -21,7 +25,7 @@ public class ProjectDTO {
 
     private Double goal;
 
-    private String header;
+    private String shortDescription;
 
-    private String footer;
+    private HistoryDTO history;
 }
