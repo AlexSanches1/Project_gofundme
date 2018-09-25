@@ -29,11 +29,11 @@ spring:
 #    hibernate:
 #      ddl-auto: update
 app:
-  jwt:
-    header: Authentication
-    secret: K&Mcq(\*cy(<9bUa)|E'(@]G$ao~'Vm1h@upwRWECrLvw~>M1J{26}g6ZAr;2}i
-    expiration: 86400
-    timeOfUsing: 120 # 2 hours
+#  jwt:
+#    header: Authentication
+#    secret: K&Mcq(\*cy(<9bUa)|E'(@]G$ao~'Vm1h@upwRWECrLvw~>M1J{26}g6ZAr;2}i
+#    expiration: 86400
+#    timeOfUsing: 120 # 2 hours
   image:
     userLogoSize: 2000000
   origin:
@@ -43,3 +43,5 @@ app:
         enabled: true
         max-file-size: 50Mb
         max-request-size: 50Mb
+paypal:
+   mode: sandbox
