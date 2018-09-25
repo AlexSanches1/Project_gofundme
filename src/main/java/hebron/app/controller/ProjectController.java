@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("project/")
+@RestController
 public class ProjectController {
 
     private ProjectService projectService;
@@ -16,18 +16,18 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @PostMapping("create/")
+    @PostMapping("admin/project/create/")
     public ResponseEntity createNewProject(@RequestBody RequestProjectDTO requestProjectDTO) {
         projectService.createProject(requestProjectDTO);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("list/")
+    @GetMapping("project/list/")
     public ResponseEntity listProject() {
         return ResponseEntity.ok(projectService.listProject());
     }
 
-    @GetMapping("delete/")
+    @GetMapping("admin/project/delete/")
     public void deleteProject(Long id) {
         projectService.delete(id);
     }
