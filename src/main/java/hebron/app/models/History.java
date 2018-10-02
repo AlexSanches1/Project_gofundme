@@ -16,3 +16,4 @@ public class History {
 
     private String text;
 }
+

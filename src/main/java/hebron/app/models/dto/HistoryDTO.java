@@ -9,3 +9,4 @@ public class HistoryDTO {
 
     private String text;
 }
+
