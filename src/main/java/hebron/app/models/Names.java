@@ -8,16 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
-public class Admin {
+public class Names {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Byte id;
+    private Long id;
 
-    private String login;
+    private String name;
 
-    private String password;
+    private String md5;
 }

@@ -11,13 +11,16 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Admin {
+public class Contributor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Byte id;
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private Long id;
 
-    private String login;
+    private String fullName;
 
-    private String password;
+    private String email;
+
+    private String image;
+
 }
