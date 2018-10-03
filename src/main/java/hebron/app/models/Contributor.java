@@ -22,5 +22,4 @@ public class Contributor {
     private String email;
 
     private String image;
-
 }
