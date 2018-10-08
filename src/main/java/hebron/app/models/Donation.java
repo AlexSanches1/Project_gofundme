@@ -26,4 +26,3 @@ public class Donation {
 
     private Long contributorId;
 }
-

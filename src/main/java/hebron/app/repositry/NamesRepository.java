@@ -10,4 +10,3 @@ import java.util.List;
 public interface NamesRepository extends JpaRepository<Names, Long> {
     List<Names> findByName(String name);
 }
-

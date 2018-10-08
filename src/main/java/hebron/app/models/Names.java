@@ -21,4 +21,3 @@ public class Names {
 
     private String md5;
 }
-

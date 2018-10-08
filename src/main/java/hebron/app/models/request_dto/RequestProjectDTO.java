@@ -17,4 +17,3 @@ public class RequestProjectDTO {
 
     private Double goal;
 }
-

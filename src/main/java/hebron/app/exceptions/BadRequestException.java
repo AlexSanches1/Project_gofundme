@@ -10,4 +10,3 @@ public class BadRequestException extends RuntimeException{
         super(cause);
     }
 }
-
