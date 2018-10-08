@@ -40,4 +40,3 @@ public class Project {
     private History history;
 
 }
-

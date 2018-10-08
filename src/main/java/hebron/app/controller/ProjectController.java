@@ -37,4 +37,3 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getProjectById(id));
     }
 }
-

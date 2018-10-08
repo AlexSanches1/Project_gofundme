@@ -22,4 +22,3 @@ public class HistoryController {
         return ResponseEntity.ok(historyService.addHistory(id, text));
     }
 }
-
