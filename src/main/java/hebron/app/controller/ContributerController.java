@@ -1,6 +1,7 @@
 package hebron.app.controller;
 
 import hebron.app.models.request_dto.RequestContributorDTO;
+import hebron.app.models.request_dto.RequestDonationDTO;
 import hebron.app.service.ContributorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,8 @@ public class ContributerController {
     private ContributorService contributorService;
 
     @PostMapping("/create/")
-    public ResponseEntity createContributor(RequestContributorDTO requestContributerDTO){
-        contributorService.createContributor(requestContributerDTO);
+    public ResponseEntity createContributor(RequestDonationDTO requestDonationDTO){
+        contributorService.createContributor(requestDonationDTO);
         return ResponseEntity.ok().build();
     }
     @GetMapping("/get/list")
